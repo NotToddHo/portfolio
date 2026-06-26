@@ -4,17 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todd Ho Nguyen | Systems & UX Product Designer</title>
-    <!-- Importing your exact Wix fonts -->
+    <!-- Loading your exact Wix font frameworks -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg: #1a1a1a; /* Matching your deep matte dark background */
+            --bg: #1a1a1a; /* Your signature deep matte charcoal background */
             --text: #ffffff;
             --text-muted: #bcbcbc;
-            --accent: #8a2be2; /* Your distinctive purple accent */
+            --accent: #8a2be2; /* The glowing violet label tracking accent */
             --nav-bg: #121212;
+            --banner-bg: #5a189a; /* The rich purple footer block color from your screenshot */
         }
         
         * { box-sizing: border-box; margin: 0; padding: 0; scroll-behavior: smooth; }
@@ -27,7 +28,7 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* Nav Bar from image_38 a0fe.jpg */
+        /* Nav Bar Layout */
         nav {
             position: fixed;
             top: 0;
@@ -39,6 +40,7 @@
             justify-content: space-between;
             align-items: center;
             height: 70px;
+            border-bottom: 1px solid #222;
         }
         .logo { 
             font-family: 'Montserrat', sans-serif; 
@@ -49,11 +51,7 @@
             padding-left: 3rem;
             font-size: 1.1rem;
         }
-        .nav-links {
-            display: flex;
-            height: 100%;
-            align-items: center;
-        }
+        .nav-links { display: flex; height: 100%; align-items: center; }
         .nav-links a { 
             color: #7f7f7f; 
             text-decoration: none; 
@@ -67,7 +65,6 @@
             transition: all 0.2s; 
         }
         .nav-links a:hover { color: var(--text); }
-        /* Your distinctive active purple tab button */
         .nav-links a.active { 
             background-color: var(--accent); 
             color: var(--text) !important;
@@ -76,7 +73,7 @@
 
         .container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
         
-        /* Hero Section Alignment */
+        /* Hero Framework */
         .hero { 
             padding-top: 160px;
             padding-bottom: 80px;
@@ -132,35 +129,36 @@
             color: var(--text);
         }
 
-        /* Work Section Layout */
+        /* Work Architecture Grid */
         #work { padding-bottom: 6rem; }
         .section-title {
             font-family: 'Montserrat', sans-serif;
-            font-size: 2rem;
+            font-size: 2.2rem;
             text-align: center;
-            margin-bottom: 4rem;
-            font-weight: 700;
+            margin-bottom: 5rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
         }
         
         .project-card { 
             display: flex; 
             gap: 4rem; 
-            margin-bottom: 6rem; 
+            margin-bottom: 5rem; 
             align-items: center; 
         }
-        .project-card.reverse { flex-direction: row-reverse; }
         
         .project-img-block { 
             width: 50%; 
-            background: #2a2a2a; 
+            background: #232323; 
             border-radius: 12px; 
             aspect-ratio: 16/11; 
             display: flex; 
             align-items: center; 
             justify-content: center; 
-            border: 1px solid #333;
+            border: 1px solid #2e2e2e;
             overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
         }
         .project-info { width: 50%; }
         
@@ -173,14 +171,57 @@
         }
         .project-title { 
             font-family: 'Montserrat', sans-serif;
-            font-size: 1.8rem; 
+            font-size: 1.65rem; 
             font-weight: 700; 
-            margin-bottom: 1rem; 
+            margin-bottom: 0.5rem; 
             line-height: 1.3;
         }
-        .project-desc { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem; font-weight: 300; }
-        .view-link { color: var(--text); text-decoration: none; font-weight: 500; font-size: 0.9rem; border-bottom: 1px solid var(--text); padding-bottom: 0.2rem; transition: all 0.2s; }
+        .project-desc { color: #8c8c8c; font-size: 0.85rem; margin-bottom: 1.5rem; font-weight: 400; letter-spacing: 0.02em; }
+        
+        .view-link { color: var(--text); text-decoration: none; font-weight: 600; font-size: 0.9rem; border-bottom: 1px solid var(--text); padding-bottom: 0.2rem; transition: all 0.2s; }
         .view-link:hover { color: var(--accent); border-color: var(--accent); }
+        .coming-soon { color: #666; font-size: 0.9rem; font-weight: 500; border-bottom: 1px solid #444; padding-bottom: 0.2rem; }
+
+        /* Purple Call-to-Action Footer Banner */
+        .cta-banner {
+            background-color: var(--banner-bg);
+            padding: 5rem 2rem;
+            text-align: center;
+            border-radius: 0px;
+            margin-top: 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .cta-banner h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 2rem;
+        }
+        .btn-cta {
+            background-color: #000000;
+            color: white;
+            border: none;
+            padding: 1rem 2.5rem;
+            font-size: 0.9rem;
+            font-weight: 700;
+            border-radius: 6px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.2s;
+        }
+        .btn-cta:hover { background-color: #111; }
+
+        /* Metadata Base Footer */
+        .base-footer {
+            background-color: #000000;
+            text-align: center;
+            padding: 3rem 2rem;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+        .base-footer a { color: var(--text); text-decoration: none; }
+        .footer-info { margin-bottom: 1rem; line-height: 1.8; font-weight: 300; }
 
         @media(max-width: 768px) {
             .hero, .project-card { flex-direction: column !important; gap: 2.5rem; text-align: center; }
@@ -193,18 +234,19 @@
 </head>
 <body>
 
+    <!-- NAV BAR -->
     <nav>
         <div class="logo">ToddHo</div>
         <div class="nav-links">
             <a href="#work" class="active">Work</a>
-            <a href="#about">About</a>
+            <a href="about.html">About</a>
             <a href="#contact">Contact</a>
         </div>
     </nav>
 
     <div class="container">
         
-        <!-- HERO SECTION -->
+        <!-- HERO SEGMENT -->
         <section class="hero">
             <div class="hero-left">
                 <h1>Hi, I'm Todd, a UX Designer</h1>
@@ -217,27 +259,25 @@
                 </div>
             </div>
             <div class="hero-right">
-                <!-- Placeholder for your cherry blossom vector sketch -->
                 <div style="font-size: 5rem;">🌸</div> 
             </div>
         </section>
 
-        <!-- SCROLL INDICATOR -->
+        <!-- INDICATOR -->
         <div class="scroll-indicator">
             You can't wait to check my work, right?
             <br>
             <div class="arrow-down">↓</div>
         </div>
 
-        <!-- WORK SECTION -->
+        <!-- MAIN WORK CASE STUDY ENTRIES -->
         <section id="work">
             <div class="section-title">Work</div>
             
-            <!-- PairGap Project Entry -->
+            <!-- Project 1: PairGap -->
             <div class="project-card">
                 <div class="project-img-block">
-                    <!-- This block acts as your image container matching image_38a0fe.jpg -->
-                    <div style="color: #666; font-size: 0.9rem;">[PairGap Image Placeholder]</div>
+                    <div style="color: #444;">[PairGap Interface Screenshot]</div>
                 </div>
                 <div class="project-info">
                     <span class="tag">UX Designer @ PairGap(Co-op)</span>
@@ -247,8 +287,81 @@
                 </div>
             </div>
 
+            <!-- Project 2: Arts of Life -->
+            <div class="project-card">
+                <div class="project-img-block">
+                    <div style="color: #444;">[Arts of Life Interface Screenshot]</div>
+                </div>
+                <div class="project-info">
+                    <span class="tag">UX Designer @ Arts of Life</span>
+                    <div class="project-title">Bringing the disabled design community closer together</div>
+                    <p class="project-desc">Web | Marketing | UX Research | UI Design</p>
+                    <a href="#contact" class="view-link">View Project ➔</a>
+                </div>
+            </div>
+
+            <!-- Project 3: Crane & Turtle -->
+            <div class="project-card">
+                <div class="project-img-block">
+                    <div style="color: #444;">[Crane & Turtle Screenshot]</div>
+                </div>
+                <div class="project-info">
+                    <span class="tag">UX Designer @ Crane & Turtle</span>
+                    <div class="project-title">Improving the E-commerce experience of a Japanese Artisan Crafts Website</div>
+                    <p class="project-desc">Web | E-Commerce | UX Research | UI Design</p>
+                    <span class="coming-soon">Coming Soon...</span>
+                </div>
+            </div>
+
+            <!-- Project 4: Mental Health / General Assembly -->
+            <div class="project-card">
+                <div class="project-img-block">
+                    <div style="color: #444;">[General Assembly Mobile Mockup]</div>
+                </div>
+                <div class="project-info">
+                    <span class="tag">Student @ General Assembly</span>
+                    <div class="project-title">Elevating user's mental health with a music app and writing a few letters</div>
+                    <p class="project-desc">Mobile App | UX Research | UX/UI Design</p>
+                    <span class="coming-soon">Coming Soon...</span>
+                </div>
+            </div>
+
+            <!-- Project 5: AAPI Dorchester -->
+            <div class="project-card">
+                <div class="project-img-block">
+                    <div style="color: #444;">[AAPI Dorchester App Interface]</div>
+                </div>
+                <div class="project-info">
+                    <span class="tag">UX Designer Intern @ AAPI Dorchester</span>
+                    <div class="project-title">Empowering Asian Americans and Pacific Islanders with a community Mobile App</div>
+                    <p class="project-desc">iOS Mobile App | Social Media | UX Research | UI Design</p>
+                    <span class="coming-soon">Coming Soon...</span>
+                </div>
+            </div>
+
         </section>
     </div>
+
+    <!-- PURPLE CALL TO ACTION BANNER CONTAINER -->
+    <div class="cta-banner" id="contact">
+        <h2>Let's make somethin' fun together!</h2>
+        <a href="mailto:toddhodesigns@gmail.com" class="btn-cta">Hit Me Up!</a>
+    </div>
+
+    <!-- METADATA SYSTEM BASE FOOTER -->
+    <footer class="base-footer">
+        <div class="footer-info">
+            <a href="mailto:toddhodesigns@gmail.com">toddhodesigns@gmail.com</a><br>
+            617.842.2997
+        </div>
+        <div style="margin-bottom: 1.5rem;">
+            <a href="https://www.linkedin.com/in/toddho/" target="_blank">
+                <!-- Simple crisp text tracking for minimal style -->
+                <strong>[ LinkedIn Link ]</strong>
+            </a>
+        </div>
+        <p>© 2026 By Todd Ho Nguyen</p>
+    </footer>
 
 </body>
 </html>
