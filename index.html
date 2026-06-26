@@ -166,7 +166,6 @@
             letter-spacing: 0.05em;
         }
         
-        /* Premium Card Layout Architecture with Custom Hover Logic */
         .project-card { 
             display: flex; 
             gap: 4rem; 
@@ -295,4 +294,114 @@
                     Most recently, I was a design intern at AAPI Community, where I helped design a mobile app to connect Asian communities with each other. Prior to that, I was a UX designer for PairGap, where I helped revamp their marketing website.
                 </p>
                 <div class="btn-group">
-                    <a href="contact.html
+                    <a href="contact.html" class="btn">Get in Touch</a>
+                    <a href="#work" class="btn btn-secondary">Download CV ➔</a>
+                </div>
+            </div>
+            <div class="hero-right">
+                <div style="font-size: 5rem;">🌸</div> 
+            </div>
+        </section>
+
+        <div class="scroll-indicator">
+            You can't wait to check my work, right?
+            <br>
+            <div class="arrow-down">↓</div>
+        </div>
+
+        <section id="work">
+            <div class="section-title">Work</div>
+            
+            <div class="project-card">
+                <div class="project-img-block">
+                    <div style="color: #ffffff;">[PairGap Interface]</div>
+                </div>
+                <div class="project-info">
+                    <span class="tag">UX Designer @ PairGap(Co-op)</span>
+                    <div class="project-title">Helping People better understand co-owning is</div>
+                    <p class="project-desc">Web | Real Estate | UX Research | Prototyping</p>
+                    <a href="contact.html" class="view-link">View Project ➔</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-img-block">
+                    <div style="color: #ffffff;">[Arts of Life Interface]</div>
+                </div>
+                <div class="project-info">
+                    <span class="tag">UX Designer @ Arts of Life</span>
+                    <div class="project-title">Bringing the disabled design community closer together</div>
+                    <p class="project-desc">Web | Marketing | UX Research | UI Design</p>
+                    <a href="contact.html" class="view-link">View Project ➔</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-img-block">
+                    <div style="color: #ffffff;">[Crane & Turtle Interface]</div>
+                </div>
+                <div class="project-info">
+                    <span class="tag">UX Designer @ Crane & Turtle</span>
+                    <div class="project-title">Improving the E-commerce experience of a Japanese Artisan Crafts Website</div>
+                    <p class="project-desc">Web | E-Commerce | UX Research | UI Design</p>
+                    <span class="coming-soon">Coming Soon...</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-img-block">
+                    <div style="color: #ffffff;">[General Assembly Mockup]</div>
+                </div>
+                <div class="project-info">
+                    <span class="tag">Student @ General Assembly</span>
+                    <div class="project-title">Elevating user's mental health with a music app and writing a few letters</div>
+                    <p class="project-desc">Mobile App | UX Research | UX/UI Design</p>
+                    <span class="coming-soon">Coming Soon...</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-img-block">
+                    <div style="color: #ffffff;">[AAPI Dorchester Interface]</div>
+                </div>
+                <div class="project-info">
+                    <span class="tag">UX Designer Intern @ AAPI Dorchester</span>
+                    <div class="project-title">Empowering Asian Americans and Pacific Islanders with a community Mobile App</div>
+                    <p class="project-desc">iOS Mobile App | Social Media | UX Research | UI Design</p>
+                    <span class="coming-soon">Coming Soon...</span>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="cta-banner">
+        <h2>Let's make somethin' fun together!</h2>
+        <a href="contact.html" class="btn-cta">Hit Me Up!</a>
+    </div>
+
+    <footer class="base-footer">
+        <div class="footer-info">
+            <a href="mailto:toddhodesigns@gmail.com">toddhodesigns@gmail.com</a><br>
+            617.842.2997
+        </div>
+        <p style="margin-top: 1rem; font-weight: 300;">© 2026 By Todd Ho Nguyen</p>
+    </footer>
+
+    <script>
+        const toggleButton = document.getElementById('theme-toggle');
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', currentTheme);
+
+        toggleButton.addEventListener('click', () => {
+            let theme = document.documentElement.getAttribute('data-theme');
+            if (theme === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
+            } else {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+    </script>
+</body>
+</html>
