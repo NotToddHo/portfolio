@@ -13,9 +13,10 @@
             --bg: #1a1a1a; /* Your signature deep matte charcoal background */
             --text: #ffffff;
             --text-muted: #bcbcbc;
-            --accent: #8a2be2; /* The glowing violet label tracking accent */
+            --accent: #8a2be2; /* The glowing violet brand accent */
             --nav-bg: #121212;
-            --banner-bg: #5a189a; /* The rich purple footer block color from your screenshot */
+            --banner-bg: #5a189a; /* The rich purple footer block color */
+            --timeline-line: #8a2be2;
         }
         
         * { box-sizing: border-box; margin: 0; padding: 0; scroll-behavior: smooth; }
@@ -117,20 +118,20 @@
 
         .scroll-indicator {
             text-align: center;
-            color: var(--accent);
+            color: var(--text-muted);
             font-size: 0.85rem;
             margin-bottom: 6rem;
             font-weight: 500;
         }
         .arrow-down {
-            margin-top: 0.75rem;
+            margin-top: 0.5rem;
             display: inline-block;
-            font-size: 1.5rem;
-            color: var(--text);
+            font-size: 1.2rem;
+            color: var(--text-muted);
         }
 
-        /* Work Architecture Grid */
-        #work { padding-bottom: 6rem; }
+        /* Work Section Layout */
+        section { padding: 6rem 0; border-top: 1px solid #222; }
         .section-title {
             font-family: 'Montserrat', sans-serif;
             font-size: 2.2rem;
@@ -182,15 +183,64 @@
         .view-link:hover { color: var(--accent); border-color: var(--accent); }
         .coming-soon { color: #666; font-size: 0.9rem; font-weight: 500; border-bottom: 1px solid #444; padding-bottom: 0.2rem; }
 
+        /* Alternating Graphical Timeline Frame from image_38fb13.png */
+        .timeline-wrapper { position: relative; max-width: 900px; margin: 0 auto; padding: 2rem 0; }
+        .timeline-wrapper::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 8px;
+            background: var(--timeline-line);
+            transform: translateX(-50%);
+            border-radius: 4px;
+        }
+        .timeline-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 4rem; position: relative; }
+        .timeline-row:nth-child(even) { flex-direction: row-reverse; }
+        .timeline-panel { width: 45%; }
+        .timeline-graphic { width: 45%; display: flex; justify-content: center; align-items: center; }
+        .timeline-graphic div { font-size: 4rem; background: #222; padding: 1.5rem; border-radius: 12px; border: 1px solid #333; }
+        
+        .timeline-panel h3 { font-family: 'Montserrat', sans-serif; font-size: 1.2rem; margin-bottom: 0.5rem; border-bottom: 1px solid #333; padding-bottom: 0.5rem; }
+        .timeline-panel p { color: var(--text-muted); font-size: 0.9rem; font-weight: 300; margin-bottom: 1rem; }
+        
+        .timeline-badge-center {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 40px;
+            height: 40px;
+            background: #121212;
+            border: 4px solid var(--timeline-line);
+            border-radius: 50%;
+            z-index: 10;
+        }
+        .inline-btns { display: flex; gap: 0.75rem; margin-top: 1rem; }
+        .inline-btn { background: #000; color: #fff; padding: 0.4rem 1rem; border-radius: 4px; font-size: 0.8rem; text-decoration: none; border: 1px solid #333; font-weight: 600; }
+        .inline-btn:hover { background: var(--accent); border-color: var(--accent); }
+
+        /* Testimonials / Kind Words Layout */
+        .testimonial-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; margin-top: 2rem; }
+        .testimonial-card { background: transparent; border-left: 3px solid var(--accent); padding: 0.5rem 0 0.5rem 1.5rem; }
+        .quote-text { color: var(--text-muted); font-size: 0.95rem; font-weight: 300; font-style: normal; margin-bottom: 1rem; line-height: 1.8; }
+        .quote-author { font-family: 'Montserrat', sans-serif; font-size: 0.85rem; font-weight: 700; color: var(--text); }
+
+        /* Things I Enjoy Layout block */
+        .hobbies-list { margin-top: 2rem; }
+        .hobby-item { padding: 1.5rem 0; border-bottom: 1px solid #222; }
+        .hobby-item:last-child { border-none; }
+        .hobby-title { font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 1rem; margin-bottom: 0.25rem; }
+        .hobby-desc { color: var(--text-muted); font-size: 0.9rem; font-weight: 300; }
+
         /* Purple Call-to-Action Footer Banner */
         .cta-banner {
             background-color: var(--banner-bg);
             padding: 5rem 2rem;
             text-align: center;
-            border-radius: 0px;
             margin-top: 4rem;
             position: relative;
-            overflow: hidden;
         }
         .cta-banner h2 {
             font-family: 'Montserrat', sans-serif;
@@ -224,8 +274,10 @@
         .footer-info { margin-bottom: 1rem; line-height: 1.8; font-weight: 300; }
 
         @media(max-width: 768px) {
-            .hero, .project-card { flex-direction: column !important; gap: 2.5rem; text-align: center; }
-            .hero-left, .hero-right, .project-img-block, .project-info { width: 100%; }
+            .hero, .project-card, .timeline-row { flex-direction: column !important; gap: 2.5rem; text-align: center; }
+            .hero-left, .hero-right, .project-img-block, .project-info, .timeline-panel, .timeline-graphic { width: 100%; }
+            .timeline-wrapper::before, .timeline-badge-center { display: none; }
+            .testimonial-grid { grid-template-columns: 1fr; gap: 2rem; }
             .btn-group { justify-content: center; }
             .nav-links a { padding: 0 1rem; }
             .logo { padding-left: 1rem; }
@@ -239,7 +291,7 @@
         <div class="logo">ToddHo</div>
         <div class="nav-links">
             <a href="#work" class="active">Work</a>
-            <a href="about.html">About</a>
+            <a href="#about">About</a>
             <a href="#contact">Contact</a>
         </div>
     </nav>
@@ -247,7 +299,7 @@
     <div class="container">
         
         <!-- HERO SEGMENT -->
-        <section class="hero">
+        <section class="hero" style="border: none;">
             <div class="hero-left">
                 <h1>Hi, I'm Todd, a UX Designer</h1>
                 <p class="hero-desc">
@@ -338,8 +390,113 @@
                     <span class="coming-soon">Coming Soon...</span>
                 </div>
             </div>
-
         </section>
+
+        <!-- ABOUT TIMELINE SECTION (From image_38fb13.png) -->
+        <section id="about">
+            <div class="section-title">About Me</div>
+            <div class="scroll-indicator" style="margin-bottom: 4rem;">
+                Scroll Down <br> <div class="arrow-down">↓</div>
+            </div>
+
+            <div class="timeline-wrapper">
+                
+                <!-- Row 1 -->
+                <div class="timeline-row">
+                    <div class="timeline-badge-center"></div>
+                    <div class="timeline-panel">
+                        <h3>Me, Myself & My Designs</h3>
+                        <p>I'm a UX/UI Designer who cares about positively impacting communities using design and data. With a background in psychology, finance, and marketing, I've had an opportunity to design for non-profits and brands in real estate and finance.</p>
+                    </div>
+                    <div class="timeline-graphic">
+                        <div>🐈‍⬛</div>
+                    </div>
+                </div>
+
+                <!-- Row 2 -->
+                <div class="timeline-row">
+                    <div class="timeline-badge-center"></div>
+                    <div class="timeline-panel">
+                        <h3>My previous experiences...</h3>
+                        <p>Most recently I was a design intern at AAPI community where I helped design a mobile app to bring Asian communities closer together. Here I facilitated design workshops, conducted user research, and built interactive prototypes in Figma.</p>
+                        <p>Prior to that, I was a UX Designer (co-op) for Pairgap, a real estate startup, that allows people to co-own homes. Here I helped revamp their marketing website and built prototypes to let customers make better financial decisions.</p>
+                    </div>
+                    <div class="timeline-graphic">
+                        <div>📈</div>
+                    </div>
+                </div>
+
+                <!-- Row 3 -->
+                <div class="timeline-row">
+                    <div class="timeline-badge-center"></div>
+                    <div class="timeline-panel">
+                        <h3>How I got into design</h3>
+                        <p>I chose design as my career path because I realized I wanted a position where I could leverage the full breadth of my diverse skill set. A melting pot of experiences in psychology, project coordination, marketing, and design actually turned out to be ideal for crafting products and experiences that help people.</p>
+                        <p>I'm super excited to see where this new career path takes me, the connections that I'm able to make along the way, and how I'll be able to further evolve my research and design skills.</p>
+                    </div>
+                    <div class="timeline-graphic">
+                        <div>🎨</div>
+                    </div>
+                </div>
+
+                <!-- Row 4 -->
+                <div class="timeline-row">
+                    <div class="timeline-badge-center"></div>
+                    <div class="timeline-panel">
+                        <h3>Let's connect!</h3>
+                        <p>I'd love to chat over a nice cup of hot chocolate and discuss anything related to design, collab opportunities, or just a friendly hello.</p>
+                        <div class="inline-btns">
+                            <a href="#" class="inline-btn">Resume</a>
+                            <a href="https://www.linkedin.com/in/toddho/" target="_blank" class="inline-btn">LinkedIn</a>
+                            <a href="mailto:toddhodesigns@gmail.com" class="inline-btn">Contact</a>
+                        </div>
+                    </div>
+                    <div class="timeline-graphic">
+                        <div>☕</div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- TESTIMONIALS SECTION -->
+        <section>
+            <div class="section-title" style="font-size: 1.8rem; margin-bottom: 3rem;">Some Kind Words</div>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <p class="quote-text">"It was a pleasure to work with Todd on a website redesign for a non-profit. In addition to being hardworking, he is a great team player. Data-driven solutions and needs assessment are two areas in which he has demonstrated strong research abilities. His work confirms his passion for research, methodology, and user empathy. Your collaboration was a delight, cheers!"</p>
+                    <p class="quote-author">-Valerie Sona, Lutron Electronics</p>
+                </div>
+                <div class="testimonial-card">
+                    <p class="quote-text">"It was a pleasure to work with Todd on Pairgap. His versatility and flexibility were among his greatest strength. From leading client standups to running user interviews to prototyping MVPs in Figma, Todd was able to tackle all these tasks in stride. On top of all this, his reception of feedback and willingness to collaborate made him an ideal team member. His contributions were essential to meeting our project deadline and our team could not have done it without his input and expertise!"</p>
+                    <p class="quote-author">-Mo Chen, Webstacks</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- HOBBIES SECTION -->
+        <section>
+            <div class="section-title" style="font-size: 1.8rem; margin-bottom: 3rem; text-align: left;">Things I Enjoy</div>
+            <div class="hobbies-list">
+                
+                <div class="hobby-item">
+                    <div class="hobby-title">Food & Desserts 🍜</div>
+                    <div class="hobby-desc">I'm always on the lookout for the next best food, dessert, and coffee spots in the Boston area. I love taking and editing photos of places I visit to share and constantly recommend when family and friends visit.</div>
+                </div>
+
+                <div class="hobby-item">
+                    <div class="hobby-title">Games 🎮</div>
+                    <div class="hobby-desc">I love playing games with friends in my downtime. Currently playing: League of Legends, Valorant, and Team Fight Tactics. I also enjoy playing board games!</div>
+                </div>
+
+                <div class="hobby-item">
+                    <div class="hobby-title">Sports 🏐</div>
+                    <div class="hobby-desc">I currently play Volleyball & Tennis and have been playing since Middle School, both indoor and outdoor. Not only does it play a huge role in my physical health, but it's also exciting to constantly improve my cognitive functions. Such as learning, memory, and creative thinking.</div>
+                </div>
+
+            </div>
+        </section>
+
     </div>
 
     <!-- PURPLE CALL TO ACTION BANNER CONTAINER -->
@@ -354,13 +511,7 @@
             <a href="mailto:toddhodesigns@gmail.com">toddhodesigns@gmail.com</a><br>
             617.842.2997
         </div>
-        <div style="margin-bottom: 1.5rem;">
-            <a href="https://www.linkedin.com/in/toddho/" target="_blank">
-                <!-- Simple crisp text tracking for minimal style -->
-                <strong>[ LinkedIn Link ]</strong>
-            </a>
-        </div>
-        <p>© 2026 By Todd Ho Nguyen</p>
+        <p style="margin-top: 1rem; font-weight: 300;">© 2026 By Todd Ho Nguyen</p>
     </footer>
 
 </body>
