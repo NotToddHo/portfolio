@@ -301,13 +301,26 @@
         .project-desc { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1.5rem; font-weight: 400; letter-spacing: 0.02em; transition: color 0.3s ease; }
         
         .view-link { 
-            color: var(--text); 
-            text-decoration: none; 
-            font-weight: 600; 
-            font-size: 0.9rem; 
-            border-bottom: 1px solid var(--text); 
-            padding-bottom: 0.2rem; 
-            transition: all 0.3s ease; 
+    color: var(--text); 
+    text-decoration: none; /* Removes the default browser text underline completely */
+    font-weight: 600; 
+    font-size: 0.9rem; 
+    border-bottom: 2px solid transparent; /* Hidden underline placeholder */
+    padding-bottom: 0.2rem; 
+    transition: color 0.3s ease, border-color 0.3s ease, font-weight 0.3s ease; 
+        }
+
+/* When the card wrapper itself is hovered, reveal the custom underline indicator */
+.project-card-wrapper:hover .view-link {
+    color: #ffffff !important;
+    border-color: #ffffff !important; /* Animates the clean border underline into view */
+    font-weight: 700;
+        }
+
+/* Individual direct link override hover state */
+.view-link:hover { 
+    color: var(--accent) !important; 
+    border-color: var(--accent) !important; 
         }
         .view-link:hover { color: var(--accent) !important; border-color: var(--accent) !important; }
         .coming-soon { color: #666; font-size: 0.9rem; font-weight: 500; border-bottom: 1px solid #444; padding-bottom: 0.2rem; }
