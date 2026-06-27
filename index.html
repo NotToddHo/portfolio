@@ -60,7 +60,6 @@
             transition: background-color 0.3s, border-color 0.3s;
         }
         
-        /* Logo block container layout alignment */
         .logo-container {
             display: flex;
             align-items: center;
@@ -70,13 +69,13 @@
             transition: transform 0.2s ease;
         }
         .logo-container:hover {
-            transform: scale(1.03); /* Subtle physical zoom response on hover */
+            transform: scale(1.03);
         }
         .logo-container:hover .logo {
-            color: var(--accent); /* Changes logo color to your brand violet on hover */
+            color: var(--accent);
         }
         .logo-container:hover .logo-icon {
-            fill: var(--accent); /* Switches vectors color seamlessly */
+            fill: var(--accent);
         }
         
         .logo-icon {
@@ -258,13 +257,6 @@
             color: #ffffff !important;
         }
 
-        /* Forces the "View Project" link to pop to neon white and thick underline on card hover */
-        .project-card-wrapper:hover .view-link {
-            color: #ffffff !important;
-            border-color: #ffffff !important;
-            font-weight: 700;
-        }
-
         .project-card-wrapper:hover .tag {
             color: var(--accent) !important;
         }
@@ -300,29 +292,45 @@
         }
         .project-desc { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1.5rem; font-weight: 400; letter-spacing: 0.02em; transition: color 0.3s ease; }
         
+        /* Fixed View Project Layout with clean inline element scaling */
         .view-link { 
-    color: var(--text); 
-    text-decoration: none; /* Removes the default browser text underline completely */
-    font-weight: 600; 
-    font-size: 0.9rem; 
-    border-bottom: 2px solid transparent; /* Hidden underline placeholder */
-    padding-bottom: 0.2rem; 
-    transition: color 0.3s ease, border-color 0.3s ease, font-weight 0.3s ease; 
+            color: var(--text); 
+            text-decoration: none; 
+            font-weight: 600; 
+            font-size: 0.9rem; 
+            border-bottom: 2px solid transparent; 
+            padding-bottom: 0.2rem; 
+            display: inline-flex;
+            align-items: center;
+            transition: color 0.3s ease, border-color 0.3s ease; 
         }
 
-/* When the card wrapper itself is hovered, reveal the custom underline indicator */
-.project-card-wrapper:hover .view-link {
-    color: #ffffff !important;
-    border-color: #ffffff !important; /* Animates the clean border underline into view */
-    font-weight: 700;
+        /* Dynamically generating the arrow element in the CSS framework */
+        .view-link::after {
+            content: ' ➔';
+            opacity: 0;
+            display: inline-block;
+            transform: translateX(-8px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            margin-left: 6px;
         }
 
-/* Individual direct link override hover state */
-.view-link:hover { 
-    color: var(--accent) !important; 
-    border-color: var(--accent) !important; 
+        .project-card-wrapper:hover .view-link {
+            color: #ffffff !important;
+            border-color: #ffffff !important; 
+            font-weight: 700;
         }
-        .view-link:hover { color: var(--accent) !important; border-color: var(--accent) !important; }
+
+        /* Slide out the arrow seamlessly on card wrapper hover */
+        .project-card-wrapper:hover .view-link::after {
+            opacity: 1 !important;
+            transform: translateX(0);
+        }
+
+        .view-link:hover { 
+            color: var(--accent) !important; 
+            border-color: var(--accent) !important; 
+        }
         .coming-soon { color: #666; font-size: 0.9rem; font-weight: 500; border-bottom: 1px solid #444; padding-bottom: 0.2rem; }
 
         .cta-banner {
@@ -373,7 +381,6 @@
 <body>
 
     <nav>
-        <!-- The interactive logo grouping containing a custom layout vector icon -->
         <a href="index.html" class="logo-container">
             <svg class="logo-icon" viewBox="0 0 24 24">
                 <path d="M12 2L2 22h20L12 2zm0 4.85L18.4 18H5.6L12 6.85zM11 10v4h2v-4h-2zm0 5v2h2v-2h-2z"/>
@@ -414,7 +421,6 @@
         <section id="work">
             <div class="section-title">Work</div>
             
-            <!-- Project 1: PairGap -->
             <div class="project-card-wrapper">
                 <div class="side-banner"><span>PairGap</span></div>
                 <div class="project-card">
@@ -425,12 +431,11 @@
                         <span class="tag">UX Designer @ PairGap(Co-op)</span>
                         <div class="project-title">Helping People better understand co-owning is</div>
                         <p class="project-desc">Web | Real Estate | UX Research | Prototyping</p>
-                        <a href="contact.html" class="view-link">View Project <span class="arrow">➔</span></a>
+                        <a href="contact.html" class="view-link">View Project</a>
                     </div>
                 </div>
             </div>
 
-            <!-- Project 2: Arts of Life -->
             <div class="project-card-wrapper">
                 <div class="side-banner"><span>Arts of Life</span></div>
                 <div class="project-card">
@@ -441,12 +446,11 @@
                         <span class="tag">UX Designer @ Arts of Life</span>
                         <div class="project-title">Bringing the disabled design community closer together</div>
                         <p class="project-desc">Web | Marketing | UX Research | UI Design</p>
-                        <a href="contact.html" class="view-link">View Project ➔</a>
+                        <a href="contact.html" class="view-link">View Project</a>
                     </div>
                 </div>
             </div>
 
-            <!-- Project 3: Crane & Turtle -->
             <div class="project-card-wrapper">
                 <div class="side-banner"><span>Crane&Turtle</span></div>
                 <div class="project-card">
@@ -462,7 +466,6 @@
                 </div>
             </div>
 
-            <!-- Project 4: General Assembly -->
             <div class="project-card-wrapper">
                 <div class="side-banner"><span>Music-Aide</span></div>
                 <div class="project-card">
@@ -478,7 +481,6 @@
                 </div>
             </div>
 
-            <!-- Project 5: AAPI Dorchester -->
             <div class="project-card-wrapper">
                 <div class="side-banner"><span>AAPI Community of Dorchester</span></div>
                 <div class="project-card">
