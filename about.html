@@ -187,4 +187,184 @@
             top: 50%;
             transform: translate(-50%, -50%);
             width: 40px;
-            height:
+            height: 40px;
+            background: var(--bg);
+            border: 4px solid var(--timeline-line);
+            border-radius: 50%;
+            z-index: 10;
+        }
+        .inline-btns { display: flex; gap: 0.75rem; margin-top: 1rem; }
+        .inline-btn { background: var(--text); color: var(--bg); padding: 0.4rem 1rem; border-radius: 4px; font-size: 0.8rem; text-decoration: none; border: 1px solid var(--border); font-weight: 600; }
+
+        .testimonial-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; margin-top: 2rem; }
+        .testimonial-card { background: var(--card-bg); border: 1px solid var(--border); border-left: 4px solid var(--accent); padding: 1.5rem; border-radius: 8px; }
+        .quote-text { color: var(--text-muted); font-size: 0.95rem; font-weight: 300; margin-bottom: 1rem; line-height: 1.8; }
+        .quote-author { font-family: 'Montserrat', sans-serif; font-size: 0.85rem; font-weight: 700; color: var(--text); }
+
+        .hobbies-list { margin-top: 2rem; }
+        .hobby-item { padding: 1.5rem 0; border-bottom: 1px solid var(--border); }
+        .hobby-title { font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 1rem; margin-bottom: 0.25rem; }
+        .hobby-desc { color: var(--text-muted); font-size: 0.9rem; font-weight: 300; }
+
+        .cta-banner {
+            background-color: var(--banner-bg);
+            color: white;
+            padding: 5rem 2rem;
+            text-align: center;
+            margin-top: 4rem;
+        }
+        .cta-banner h2 { font-family: 'Montserrat', sans-serif; font-size: 2.2rem; font-weight: 800; margin-bottom: 2rem; }
+        .btn-cta { background-color: #000000; color: white; border: none; padding: 1rem 2.5rem; font-size: 0.9rem; font-weight: 700; border-radius: 6px; text-decoration: none; }
+
+        .base-footer {
+            background-color: #000000;
+            text-align: center;
+            padding: 3rem 2rem;
+            font-size: 0.85rem;
+            color: #bcbcbc;
+        }
+        .base-footer a { color: white; text-decoration: none; }
+        .footer-info { margin-bottom: 1rem; line-height: 1.8; font-weight: 300; }
+
+        @media(max-width: 768px) {
+            .timeline-row { flex-direction: column !important; gap: 2.5rem; text-align: center; }
+            .timeline-panel, .timeline-graphic { width: 100%; }
+            .timeline-wrapper::before, .timeline-badge-center { display: none; }
+            .testimonial-grid { grid-template-columns: 1fr; gap: 2rem; }
+            .nav-links a { padding: 0 1rem; }
+            .logo-container { padding-left: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo-container">
+            <svg class="logo-icon" viewBox="0 0 24 24">
+                <path d="M12 2L2 22h20L12 2zm0 4.85L18.4 18H5.6L12 6.85zM11 10v4h2v-4h-2zm0 5v2h2v-2h-2z"/>
+            </svg>
+            <div class="logo">ToddHo</div>
+        </a>
+        <div class="nav-links">
+            <a href="index.html">Work</a>
+            <a href="about.html" class="active">About</a>
+            <a href="contact.html">Contact</a>
+            <button id="theme-toggle">🌓</button>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="section-title">About Me</div>
+        <div class="scroll-indicator">
+            Scroll Down <br> <div class="arrow-down">↓</div>
+        </div>
+
+        <div class="timeline-wrapper">
+            <div class="timeline-row">
+                <div class="timeline-badge-center"></div>
+                <div class="timeline-panel">
+                    <h3>Me, Myself & My Designs</h3>
+                    <p>I'm a UX/UI Designer who cares about positively impacting communities using design and data. With a background in psychology, finance, and marketing, I've had an opportunity to design for non-profits and brands in real estate and finance.</p>
+                </div>
+                <div class="timeline-graphic"><div>🐈‍⬛</div></div>
+            </div>
+
+            <div class="timeline-row">
+                <div class="timeline-badge-center"></div>
+                <div class="timeline-panel">
+                    <h3>My previous experiences...</h3>
+                    <p>Most recently I was a design intern at AAPI community where I helped design a mobile app to bring Asian communities closer together. Here I facilitated design workshops, conducted user research, and built interactive prototypes in Figma.</p>
+                    <p>Prior to that, I was a UX Designer (co-op) for Pairgap, a real estate startup, that allows people to co-own homes. Here I helped revamp their marketing website and built prototypes to let customers make better financial decisions.</p>
+                </div>
+                <div class="timeline-graphic"><div>📈</div></div>
+            </div>
+
+            <div class="timeline-row">
+                <div class="timeline-badge-center"></div>
+                <div class="timeline-panel">
+                    <h3>How I got into design</h3>
+                    <p>I chose design as my career path because I realized I wanted a position where I could leverage the full breadth of my diverse skill set. A melting pot of experiences in psychology, project coordination, marketing, and design actually turned out to be ideal for crafting products and experiences that help people.</p>
+                    <p>I'm super excited to see where this new career path takes me, the connections that I'm able to make along the way, and how I'll be able to further evolve my research and design skills.</p>
+                </div>
+                <div class="timeline-graphic"><div>🎨</div></div>
+            </div>
+
+            <div class="timeline-row">
+                <div class="timeline-badge-center"></div>
+                <div class="timeline-panel">
+                    <h3>Let's connect!</h3>
+                    <p>I'd love to chat over a nice cup of hot chocolate and discuss anything related to design, collab opportunities, or just a friendly hello.</p>
+                    <div class="inline-btns">
+                        <a href="#" class="inline-btn">Resume</a>
+                        <a href="https://www.linkedin.com/in/toddho/" target="_blank" class="inline-btn">LinkedIn</a>
+                        <a href="contact.html" class="inline-btn">Contact</a>
+                    </div>
+                </div>
+                <div class="timeline-graphic"><div>☕</div></div>
+            </div>
+        </div>
+
+        <section>
+            <div class="section-title" style="font-size: 1.8rem; margin-bottom: 3rem;">Some Kind Words</div>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <p class="quote-text">"It was a pleasure to work with Todd on a website redesign for a non-profit. In addition to being hardworking, he is a great team player. Data-driven solutions and needs assessment are two areas in which he has demonstrated strong research abilities. Your collaboration was a delight, cheers!"</p>
+                    <p class="quote-author">-Valerie Sona, Lutron Electronics</p>
+                </div>
+                <div class="testimonial-card">
+                    <p class="quote-text">"It was a pleasure to work with Todd on Pairgap. His versatility and flexibility were among his greatest strength. From leading client standups to running user interviews to prototyping MVPs in Figma, Todd was able to tackle all these tasks in stride..."</p>
+                    <p class="quote-author">-Mo Chen, Webstacks</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title" style="font-size: 1.8rem; margin-bottom: 3rem; text-align: left;">Things I Enjoy</div>
+            <div class="hobbies-list">
+                <div class="hobby-item">
+                    <div class="hobby-title">Food & Desserts 🍜</div>
+                    <div class="hobby-desc">I'm always on the lookout for the next best food, dessert, and coffee spots in the Boston area. I love taking and editing photos of places I visit to share and constantly recommend when family and friends visit.</div>
+                </div>
+                <div class="hobby-item">
+                    <div class="hobby-title">Games 🎮</div>
+                    <div class="hobby-desc">I love playing games with friends in my downtime. Currently playing: League of Legends, Valorant, and Team Fight Tactics. I also enjoy playing board games!</div>
+                </div>
+                <div class="hobby-item">
+                    <div class="hobby-title">Sports 🏐</div>
+                    <div class="hobby-desc">I currently play Volleyball & Tennis and have been playing since Middle School, both indoor and outdoor. Not only does it play a huge role in my physical health, but it's also exciting to constantly improve my cognitive functions.</div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="cta-banner">
+        <h2>Let's make somethin' fun together!</h2>
+        <a href="contact.html" class="btn-cta">Hit Me Up!</a>
+    </div>
+
+    <footer class="base-footer">
+        <div class="footer-info">
+            <a href="mailto:toddhodesigns@gmail.com">toddhodesigns@gmail.com</a><br>
+            617.842.2997
+        </div>
+        <p style="margin-top: 1rem; font-weight: 300;">© 2026 By Todd Ho Nguyen</p>
+    </footer>
+
+    <script>
+        const toggleButton = document.getElementById('theme-toggle');
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', currentTheme);
+
+        toggleButton.addEventListener('click', () => {
+            let theme = document.documentElement.getAttribute('data-theme');
+            if (theme === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
+            } else {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+    </script>
+</body>
+</html>
