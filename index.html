@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Todd Ho Nguyen | Systems & UX Product Designer</title>
+    <title>Todd Ho Nguyen | Systems & UX Product Designer AND THIS IS A WORK IN PROGRESSSS</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -171,34 +171,72 @@
             letter-spacing: 0.05em;
         }
         
+        /* Relative Card Wrapper to contain the slide-out banner */
+        .project-card-wrapper {
+            position: relative;
+            margin-bottom: 5rem;
+        }
+
+        /* The sliding side banner from image_39857d.png */
+        .side-banner {
+            position: absolute;
+            left: 0;
+            top: 20px;
+            bottom: 20px;
+            width: 80px;
+            background-color: #121212;
+            border-radius: 12px 0 0 12px;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transform: translateX(0);
+            transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .side-banner span {
+            color: #ffffff;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 1.5rem;
+            writing-mode: vertical-lr;
+            transform: rotate(180deg);
+        }
+
+        /* Front interactive main block card container */
         .project-card { 
+            position: relative;
+            z-index: 2;
             display: flex; 
             gap: 4rem; 
-            margin-bottom: 5rem; 
             align-items: center; 
             background-color: var(--card-bg);
             border: 1px solid var(--border);
             padding: 2.5rem;
             border-radius: 12px;
             cursor: pointer;
-            transition: background-color 0.4s ease, border-color 0.4s ease, transform 0.3s ease;
+            transition: background-color 0.4s ease, border-color 0.4s ease, transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
         }
 
-        /* Hover animation matching your screenshot highlight */
-        .project-card:hover {
+        /* Hover action trigger state mappings */
+        .project-card-wrapper:hover .side-banner {
+            transform: translateX(-65px); /* Slides out smoothly to the left */
+        }
+
+        .project-card-wrapper:hover .project-card {
             background-color: #121212 !important; 
             border-color: #333333 !important;
-            transform: translateY(-2px); 
+            transform: translateX(15px); /* Pushes slightly right to emphasize slide-out balance */
         }
 
-        .project-card:hover .project-title,
-        .project-card:hover .project-desc,
-        .project-card:hover .view-link {
+        .project-card-wrapper:hover .project-title,
+        .project-card-wrapper:hover .project-desc,
+        .project-card-wrapper:hover .view-link {
             color: #ffffff !important;
             border-color: #ffffff !important;
         }
 
-        .project-card:hover .tag {
+        .project-card-wrapper:hover .tag {
             color: var(--accent) !important;
         }
         
@@ -272,11 +310,13 @@
         .footer-info { margin-bottom: 1rem; line-height: 1.8; font-weight: 300; }
 
         @media(max-width: 768px) {
-            .hero, .project-card { flex-direction: column !important; gap: 2.5rem; text-align: center; }
+            .hero { flex-direction: column !important; gap: 2.5rem; text-align: center; }
+            .project-card { flex-direction: column !important; gap: 2.5rem; text-align: center; padding: 1.5rem; }
             .hero-left, .hero-right, .project-img-block, .project-info { width: 100%; }
             .btn-group { justify-content: center; }
             .nav-links a { padding: 0 1rem; }
             .logo { padding-left: 1rem; }
+            .side-banner { display: none; } /* Disabled on mobile viewport frames */
         }
     </style>
 </head>
@@ -318,65 +358,86 @@
         <section id="work">
             <div class="section-title">Work</div>
             
-            <div class="project-card">
-                <div class="project-img-block">
-                    <div style="color: #ffffff;">[PairGap Interface]</div>
-                </div>
-                <div class="project-info">
-                    <span class="tag">UX Designer @ PairGap(Co-op)</span>
-                    <div class="project-title">Helping People better understand co-owning is</div>
-                    <p class="project-desc">Web | Real Estate | UX Research | Prototyping</p>
-                    <a href="contact.html" class="view-link">View Project ➔</a>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <div class="project-img-block">
-                    <div style="color: #ffffff;">[Arts of Life Interface]</div>
-                </div>
-                <div class="project-info">
-                    <span class="tag">UX Designer @ Arts of Life</span>
-                    <div class="project-title">Bringing the disabled design community closer together</div>
-                    <p class="project-desc">Web | Marketing | UX Research | UI Design</p>
-                    <a href="contact.html" class="view-link">View Project ➔</a>
+            <!-- Project 1: PairGap -->
+            <div class="project-card-wrapper">
+                <div class="side-banner"><span>PairGap</span></div>
+                <div class="project-card">
+                    <div class="project-img-block">
+                        <div style="color: #ffffff;">[PairGap Interface]</div>
+                    </div>
+                    <div class="project-info">
+                        <span class="tag">UX Designer @ PairGap(Co-op)</span>
+                        <div class="project-title">Helping People better understand co-owning is</div>
+                        <p class="project-desc">Web | Real Estate | UX Research | Prototyping</p>
+                        <a href="contact.html" class="view-link">View Project ➔</a>
+                    </div>
                 </div>
             </div>
 
-            <div class="project-card">
-                <div class="project-img-block">
-                    <div style="color: #ffffff;">[Crane & Turtle Interface]</div>
-                </div>
-                <div class="project-info">
-                    <span class="tag">UX Designer @ Crane & Turtle</span>
-                    <div class="project-title">Improving the E-commerce experience of a Japanese Artisan Crafts Website</div>
-                    <p class="project-desc">Web | E-Commerce | UX Research | UI Design</p>
-                    <span class="coming-soon">Coming Soon...</span>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <div class="project-img-block">
-                    <div style="color: #ffffff;">[General Assembly Mockup]</div>
-                </div>
-                <div class="project-info">
-                    <span class="tag">Student @ General Assembly</span>
-                    <div class="project-title">Elevating user's mental health with a music app and writing a few letters</div>
-                    <p class="project-desc">Mobile App | UX Research | UX/UI Design</p>
-                    <span class="coming-soon">Coming Soon...</span>
+            <!-- Project 2: Arts of Life -->
+            <div class="project-card-wrapper">
+                <div class="side-banner"><span>Arts of Life</span></div>
+                <div class="project-card">
+                    <div class="project-img-block">
+                        <div style="color: #ffffff;">[Arts of Life Interface]</div>
+                    </div>
+                    <div class="project-info">
+                        <span class="tag">UX Designer @ Arts of Life</span>
+                        <div class="project-title">Bringing the disabled design community closer together</div>
+                        <p class="project-desc">Web | Marketing | UX Research | UI Design</p>
+                        <a href="contact.html" class="view-link">View Project ➔</a>
+                    </div>
                 </div>
             </div>
 
-            <div class="project-card">
-                <div class="project-img-block">
-                    <div style="color: #ffffff;">[AAPI Dorchester Interface]</div>
-                </div>
-                <div class="project-info">
-                    <span class="tag">UX Designer Intern @ AAPI Dorchester</span>
-                    <div class="project-title">Empowering Asian Americans and Pacific Islanders with a community Mobile App</div>
-                    <p class="project-desc">iOS Mobile App | Social Media | UX Research | UI Design</p>
-                    <span class="coming-soon">Coming Soon...</span>
+            <!-- Project 3: Crane & Turtle -->
+            <div class="project-card-wrapper">
+                <div class="side-banner"><span>Crane&Turtle</span></div>
+                <div class="project-card">
+                    <div class="project-img-block">
+                        <div style="color: #ffffff;">[Crane & Turtle Interface]</div>
+                    </div>
+                    <div class="project-info">
+                        <span class="tag">UX Designer @ Crane & Turtle</span>
+                        <div class="project-title">Improving the E-commerce experience of a Japanese Artisan Crafts Website</div>
+                        <p class="project-desc">Web | E-Commerce | UX Research | UI Design</p>
+                        <span class="coming-soon">Coming Soon...</span>
+                    </div>
                 </div>
             </div>
+
+            <!-- Project 4: General Assembly -->
+            <div class="project-card-wrapper">
+                <div class="side-banner"><span>GenAssembly</span></div>
+                <div class="project-card">
+                    <div class="project-img-block">
+                        <div style="color: #ffffff;">[General Assembly Mockup]</div>
+                    </div>
+                    <div class="project-info">
+                        <span class="tag">Student @ General Assembly</span>
+                        <div class="project-title">Elevating user's mental health with a music app and writing a few letters</div>
+                        <p class="project-desc">Mobile App | UX Research | UX/UI Design</p>
+                        <span class="coming-soon">Coming Soon...</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 5: AAPI Dorchester -->
+            <div class="project-card-wrapper">
+                <div class="side-banner"><span>AAPIDorch</span></div>
+                <div class="project-card">
+                    <div class="project-img-block">
+                        <div style="color: #ffffff;">[AAPI Dorchester Interface]</div>
+                    </div>
+                    <div class="project-info">
+                        <span class="tag">UX Designer Intern @ AAPI Dorchester</span>
+                        <div class="project-title">Empowering Asian Americans and Pacific Islanders with a community Mobile App</div>
+                        <p class="project-desc">iOS Mobile App | Social Media | UX Research | UI Design</p>
+                        <span class="coming-soon">Coming Soon...</span>
+                    </div>
+                </div>
+            </div>
+
         </section>
     </div>
 
