@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Todd Ho Nguyen | Systems & UX Product Designer AND THIS IS A WORK IN PROGRESSSS</title>
+    <title>Todd Ho Nguyen | Systems & UX Product Designer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -59,17 +59,43 @@
             border-bottom: 1px solid var(--border);
             transition: background-color 0.3s, border-color 0.3s;
         }
+        
+        /* Logo block container layout alignment */
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding-left: 3rem;
+            text-decoration: none;
+            transition: transform 0.2s ease;
+        }
+        .logo-container:hover {
+            transform: scale(1.03); /* Subtle physical zoom response on hover */
+        }
+        .logo-container:hover .logo {
+            color: var(--accent); /* Changes logo color to your brand violet on hover */
+        }
+        .logo-container:hover .logo-icon {
+            fill: var(--accent); /* Switches vectors color seamlessly */
+        }
+        
+        .logo-icon {
+            width: 24px;
+            height: 24px;
+            fill: var(--text);
+            transition: fill 0.3s ease;
+        }
+        
         .logo { 
             font-family: 'Montserrat', sans-serif; 
             font-weight: 800; 
             letter-spacing: 0.2em; 
             text-transform: uppercase; 
             color: var(--text);
-            padding-left: 3rem;
             font-size: 1.1rem;
-            text-decoration: none;
-            transition: color 0.3s;
+            transition: color 0.3s ease;
         }
+        
         .nav-links { display: flex; height: 100%; align-items: center; }
         .nav-links a { 
             color: #7f7f7f; 
@@ -171,13 +197,11 @@
             letter-spacing: 0.05em;
         }
         
-        /* Relative Card Wrapper to contain the slide-out banner */
         .project-card-wrapper {
             position: relative;
             margin-bottom: 5rem;
         }
 
-        /* The sliding side banner from image_39857d.png */
         .side-banner {
             position: absolute;
             left: 0;
@@ -198,12 +222,13 @@
             color: #ffffff;
             font-family: 'Montserrat', sans-serif;
             font-weight: 800;
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             writing-mode: vertical-lr;
             transform: rotate(180deg);
+            white-space: nowrap;
+            text-align: center;
         }
 
-        /* Front interactive main block card container */
         .project-card { 
             position: relative;
             z-index: 2;
@@ -218,22 +243,26 @@
             transition: background-color 0.4s ease, border-color 0.4s ease, transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
         }
 
-        /* Hover action trigger state mappings */
         .project-card-wrapper:hover .side-banner {
-            transform: translateX(-65px); /* Slides out smoothly to the left */
+            transform: translateX(-65px); 
         }
 
         .project-card-wrapper:hover .project-card {
             background-color: #121212 !important; 
             border-color: #333333 !important;
-            transform: translateX(15px); /* Pushes slightly right to emphasize slide-out balance */
+            transform: translateX(15px); 
         }
 
         .project-card-wrapper:hover .project-title,
-        .project-card-wrapper:hover .project-desc,
+        .project-card-wrapper:hover .project-desc {
+            color: #ffffff !important;
+        }
+
+        /* Forces the "View Project" link to pop to neon white and thick underline on card hover */
         .project-card-wrapper:hover .view-link {
             color: #ffffff !important;
             border-color: #ffffff !important;
+            font-weight: 700;
         }
 
         .project-card-wrapper:hover .tag {
@@ -271,8 +300,16 @@
         }
         .project-desc { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1.5rem; font-weight: 400; letter-spacing: 0.02em; transition: color 0.3s ease; }
         
-        .view-link { color: var(--text); text-decoration: none; font-weight: 600; font-size: 0.9rem; border-bottom: 1px solid var(--text); padding-bottom: 0.2rem; transition: all 0.2s; }
-        .view-link:hover { color: var(--accent); border-color: var(--accent); }
+        .view-link { 
+            color: var(--text); 
+            text-decoration: none; 
+            font-weight: 600; 
+            font-size: 0.9rem; 
+            border-bottom: 1px solid var(--text); 
+            padding-bottom: 0.2rem; 
+            transition: all 0.3s ease; 
+        }
+        .view-link:hover { color: var(--accent) !important; border-color: var(--accent) !important; }
         .coming-soon { color: #666; font-size: 0.9rem; font-weight: 500; border-bottom: 1px solid #444; padding-bottom: 0.2rem; }
 
         .cta-banner {
@@ -315,15 +352,21 @@
             .hero-left, .hero-right, .project-img-block, .project-info { width: 100%; }
             .btn-group { justify-content: center; }
             .nav-links a { padding: 0 1rem; }
-            .logo { padding-left: 1rem; }
-            .side-banner { display: none; } /* Disabled on mobile viewport frames */
+            .logo-container { padding-left: 1rem; }
+            .side-banner { display: none; }
         }
     </style>
 </head>
 <body>
 
     <nav>
-        <a href="index.html" class="logo">ToddHo</a>
+        <!-- The interactive logo grouping containing a custom layout vector icon -->
+        <a href="index.html" class="logo-container">
+            <svg class="logo-icon" viewBox="0 0 24 24">
+                <path d="M12 2L2 22h20L12 2zm0 4.85L18.4 18H5.6L12 6.85zM11 10v4h2v-4h-2zm0 5v2h2v-2h-2z"/>
+            </svg>
+            <div class="logo">ToddHo</div>
+        </a>
         <div class="nav-links">
             <a href="index.html" class="active">Work</a>
             <a href="about.html">About</a>
@@ -408,7 +451,7 @@
 
             <!-- Project 4: General Assembly -->
             <div class="project-card-wrapper">
-                <div class="side-banner"><span>GenAssembly</span></div>
+                <div class="side-banner"><span>Music-Aide</span></div>
                 <div class="project-card">
                     <div class="project-img-block">
                         <div style="color: #ffffff;">[General Assembly Mockup]</div>
@@ -424,7 +467,7 @@
 
             <!-- Project 5: AAPI Dorchester -->
             <div class="project-card-wrapper">
-                <div class="side-banner"><span>AAPIDorch</span></div>
+                <div class="side-banner"><span>AAPI Community of Dorchester</span></div>
                 <div class="project-card">
                     <div class="project-img-block">
                         <div style="color: #ffffff;">[AAPI Dorchester Interface]</div>
